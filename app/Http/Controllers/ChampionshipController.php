@@ -66,9 +66,9 @@ class ChampionshipController extends Controller
         return response()->json($championship);
     }
 
-    public function destroy(Team $team)
+    public function destroy(Championship $championship)
     {
-        $team->delete();
+        $championship->delete();
 
         return response()->json();
     }
