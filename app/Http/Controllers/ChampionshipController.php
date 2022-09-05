@@ -6,9 +6,8 @@ use App\Http\Requests\ChampionshipRequest;
 use App\Http\Resources\ChampionshipResource;
 use App\Models\Championship;
 use App\Models\ChampionshipTeams;
-use App\Models\Team;
+use App\Models\FinishedChampionship;
 use App\Services\ChampionshipService;
-use Illuminate\Http\Request;
 
 class ChampionshipController extends Controller
 {
@@ -77,8 +76,21 @@ class ChampionshipController extends Controller
 
     public function play(Championship $championship)
     {
-        $championshipMataches = new ChampionshipService($championship->teams->toArray());
-        $results = $championshipMataches->startChampionship();
+        $finishedChampionship = FinishedChampionship::where('championship_id', $championship->id)->first();
+
+        if (!is_null($finishedChampionship)) {
+            return response()->json(['message' => 'Campeonato já finalizado.']);
+        }
+        
+        $championshipMatches = new ChampionshipService($championship->teams->toArray());
+        $results = $championshipMatches->startChampionship();
+        
+        FinishedChampionship::create([
+            'championship_id' => $championship->id,
+            'first_place_team' => $results['firstPlace']['id'],
+            'second_place_team' => $results['secondPlace']['id'],
+            'third_place_team' => $results['thirdPlace']['id']
+        ]);
 
         return response()->json($results);
     }

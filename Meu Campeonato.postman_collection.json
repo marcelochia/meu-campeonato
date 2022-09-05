@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "eb4476af-c9fb-47f6-84e0-954ee010f1b2",
+		"name": "Meu Campeonato",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Times",
+			"item": [
+				{
+					"name": "Cadastrar time",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Time H\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/times",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"times"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar times",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/times",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"times"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/times/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"times",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar time",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ssss\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/times/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"times",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir time",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/times/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"times",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Campeonatos",
+			"item": [
+				{
+					"name": "Cadastrar campeonato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Campeonato tesste\",\r\n    \"teams\" : {\r\n        \"1\": 8,\r\n        \"2\": 7,\r\n        \"3\": 6,\r\n        \"4\": 5,\r\n        \"5\": 4,\r\n        \"6\": 3,\r\n        \"7\": 2,\r\n        \"8\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/campeonatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"campeonatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar campeonatos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/campeonatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"campeonatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar campeonato",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/campeonatos/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"campeonatos",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar campeonatos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Campeonato Paranaense\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/campeonatos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"campeonatos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir campeonatos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/campeonatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"campeonatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogar campeonato",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/campeonatos/20/jogar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"campeonatos",
+								"20",
+								"jogar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar campeonatos jogados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/campeonatos-concluidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"campeonatos-concluidos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

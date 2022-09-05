@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChampionshipController;
+use App\Http\Controllers\FinishedChampionshipsController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,4 @@ Route::apiResource('times', TeamController::class)->parameters(['times' => 'team
 Route::apiResource('campeonatos', ChampionshipController::class)->parameters(['campeonatos' => 'championship']);
 
 Route::get('/campeonatos/{championship}/jogar', [ChampionshipController::class, 'play']);
+Route::get('/campeonatos-concluidos', [FinishedChampionshipsController::class, 'all']);
