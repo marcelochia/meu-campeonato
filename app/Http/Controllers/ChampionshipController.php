@@ -7,6 +7,7 @@ use App\Http\Resources\ChampionshipResource;
 use App\Models\Championship;
 use App\Models\ChampionshipTeams;
 use App\Models\Team;
+use App\Services\ChampionshipService;
 use Illuminate\Http\Request;
 
 class ChampionshipController extends Controller
@@ -50,7 +51,8 @@ class ChampionshipController extends Controller
 
         $championshipResource = new ChampionshipResource($championship);
 
-        return response()->json($championshipResource);    }
+        return response()->json($championshipResource);
+    }
 
     public function update(ChampionshipRequest $request, $id)
     {
@@ -71,5 +73,13 @@ class ChampionshipController extends Controller
         $championship->delete();
 
         return response()->json();
+    }
+
+    public function play(Championship $championship)
+    {
+        $championshipMataches = new ChampionshipService($championship->teams->toArray());
+        $results = $championshipMataches->startChampionship();
+
+        return response()->json($results);
     }
 }

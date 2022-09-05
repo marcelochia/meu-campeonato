@@ -15,6 +15,5 @@ class Championship extends Model
     public function teams()
     {
         return $this->hasManyThrough(Team::class, ChampionshipTeams::class, 'championship_id', 'id', 'id', 'team_id');
-        // return $this->hasMany(ChampionshipTeams::class, 'championship_id', 'id');
     }
 }
